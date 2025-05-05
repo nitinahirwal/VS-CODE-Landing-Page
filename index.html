@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Visual Studio Code - Code Editor</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       margin: 0;
@@ -14,11 +13,16 @@
       color: white;
       text-align: center;
     }
+    .container {
+      max-width: 1200px; /* Constrain the width to match the screenshot */
+      margin: 0 auto; /* Center the container */
+      padding: 0 20px; /* Add some padding for smaller screens */
+    }
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 80px;
+      padding: 20px 0; /* Adjusted padding to fit within container */
     }
     .nav-left {
       display: flex;
@@ -47,9 +51,10 @@
       font-size: 3rem;
       margin: 0;
       font-weight: bold;
+      line-height: 1.2;
     }
     .hero {
-      padding: 50px 20px 20px;
+      padding: 50px 0 20px; /* Adjusted padding to fit within container */
     }
     .hero-buttons button {
       background-color: #007acc;
@@ -70,11 +75,23 @@
     .media-container {
       display: flex;
       justify-content: center;
+      align-items: center;
       margin-top: 20px;
+      background-image: url('/assets/hero-background.webp');
+      background-size: cover;
+      background-position: center;
+      padding: 20px;;
+      border-radius: 12px;
+      min-height: 400px; /* Ensures the container has enough space */
+      position: relative;
+      box-shadow: inset 0 0 20px rgba(26, 60, 109, 0.8); /* Gradient border effect */
     }
     .media-container video {
-      max-width: 80%;
+      width: 100%; /* Video takes the full width of the container */
+      max-width: 1000px; /* Constrain the video width to match screenshot proportions */
       border-radius: 12px;
+      border: 2px solid #333;
+      background-color: #1e1e1e; /* Dark background for video to blend with interface */
     }
     h4 {
       margin-top: 30px;
@@ -83,48 +100,50 @@
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <div class="navbar">
-    <div class="nav-left">
-      <img src="https://code.visualstudio.com/assets/favicon.ico" alt="VS Code Logo" />
-      <span style="font-size: 20px;">Visual Studio Code</span>
-      <span class="toplink">Docs</span>
-      <span class="toplink">Updates</span>
-      <span class="toplink">Blog</span>
-      <span class="toplink">API</span>
-      <span class="toplink">Extensions</span>
-      <span class="toplink">FAQ</span>
-      <span class="toplink">GitHub Copilot</span>
+  <div class="container">
+    <!-- Navigation -->
+    <div class="navbar">
+      <div class="nav-left">
+        <img src="https://code.visualstudio.com/assets/favicon.ico" alt="VS Code Logo" />
+        <span style="font-size: 20px;">Visual Studio Code</span>
+        <span class="toplink">Docs</span>
+        <span class="toplink">Updates</span>
+        <span class="toplink">Blog</span>
+        <span class="toplink">API</span>
+        <span class="toplink">Extensions</span>
+        <span class="toplink">FAQ</span>
+        <span class="toplink">GitHub Copilot</span>
+      </div>
+      <div class="nav-right">
+        <input type="text" placeholder="Search Docs" />
+        <button>Download</button>
+      </div>
     </div>
-    <div class="nav-right">
-      <input type="text" placeholder="Search Docs" />
-      <button>Download</button>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <h1>Your code editor.</h1>
+      <h1>Redefined with AI.</h1>
+      <div class="hero-buttons">
+        <button>Download for macOS</button>
+        <button>Try agent mode</button>
+        <br />
+        <a href="#">Web,</a>
+        <a href="#">Insiders edition,</a>
+        <a href="#">other platforms</a>
+      </div>
     </div>
-  </div>
 
-  <!-- Hero Section -->
-  <div class="hero">
-    <h1>Your code editor.</h1>
-    <h1>Redefined with AI.</h1>
-    <div class="hero-buttons">
-      <button>Download for macOS</button>
-      <button>Try agent mode</button>
-      <br />
-      <a href="#">Web,</a>
-      <a href="#">Insiders edition,</a>
-      <a href="#">other platforms</a>
+    <!-- Media -->
+    <div class="media-container">
+      <video autoplay muted loop>
+        <source src="/assets/Hero Dark Large.webm" type="video/webm" />
+        Your browser does not support the video tag.
+      </video>
     </div>
-  </div>
 
-  <!-- Media -->
-  <div class="media-container">
-    <video autoplay muted loop>
-      <source src="/assets/Hero Dark Large.webm" type="video/webm" />
-      Your browser does not support the video tag.
-    </video>
+    <!-- Replay Section -->
+    <h4>Replay</h4>
   </div>
-
-  <!-- Replay Section -->
-  <h4>Replay</h4>
 </body>
 </html>
